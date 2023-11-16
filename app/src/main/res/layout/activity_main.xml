@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/cardview_dark_background">
 
     <TextView
@@ -15,13 +15,63 @@
         android:gravity="center"
         android:text="2048"
         android:textColor="@color/white"
-        android:textSize="48dp" />
+        android:textSize="10mm" />
+
+    <LinearLayout
+        android:id="@+id/ScoresLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title2048"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/ScoreL"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Score:"
+            android:layout_below="@id/title2048"
+            android:textSize="4mm"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/ScoreNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="4mm"
+            android:layout_below="@id/title2048"
+            android:layout_toEndOf="@id/ScoreL"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/RecordL"
+            android:textSize="4mm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Record:"
+            android:layout_below="@id/title2048"
+            android:layout_toEndOf="@id/ScoreNum"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/RecordNum"
+            android:layout_width="0dp"
+            android:textSize="4mm"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:layout_below="@id/title2048"
+            android:layout_toEndOf="@id/RecordL"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title2048"
+        android:layout_below="@id/ScoresLayout"
         android:orientation="horizontal">
 
         <Button
@@ -29,7 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_below="@id/title2048"
+            android:layout_below="@id/ScoresLayout"
             android:text="Play" />
 
         <Button
@@ -53,17 +103,19 @@
 
     <LinearLayout
         android:id="@+id/textViewLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/buttonLayout"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
 
         <LinearLayout
             android:id="@+id/layoutBloques1x"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="3dp"
             android:orientation="horizontal">
 
 
@@ -88,12 +140,17 @@
                 android:layout_marginRight="0dp"
                 android:text="0" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layoutBloques2x"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -124,7 +181,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="14mm"
-            android:layout_margin="10dp"
+            android:layout_margin="3dp"
             android:orientation="horizontal">
 
 
@@ -154,7 +211,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="3dp"
             android:orientation="horizontal">
 
 
@@ -180,4 +237,5 @@
                 android:text="0" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>
